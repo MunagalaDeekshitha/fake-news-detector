@@ -6,3 +6,4 @@ joblib==1.4.2
 newspaper3k==0.2.8
 lxml_html_clean==0.1.1
 pydantic==2.7.4
+ddgs
