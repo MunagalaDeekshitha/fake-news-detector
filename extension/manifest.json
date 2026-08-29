@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Fake News Detector",
+  "version": "1.0.0",
+  "description": "Highlights or analyzes news text on any page and flags it as likely real or fake using an ML model.",
+  "permissions": ["activeTab", "scripting", "contextMenus"],
+  "host_permissions": ["http://localhost:8000/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fake News Detector"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

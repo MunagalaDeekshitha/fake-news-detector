@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Fake News Detector</title>
+  <style>
+    body {
+      width: 340px;
+      font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+      padding: 14px;
+      margin: 0;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 15px;
+      margin: 0 0 10px 0;
+      color: #222;
+    }
+    button {
+      width: 100%;
+      padding: 9px 12px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    button:hover { background: #1d4ed8; }
+    button:disabled { background: #93c5fd; cursor: not-allowed; }
+
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      height: 70px;
+      resize: none;
+      font-size: 12px;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      margin-bottom: 8px;
+    }
+
+    #result {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: none;
+    }
+    #result.real { background: #dcfce7; color: #166534; }
+    #result.fake { background: #fee2e2; color: #991b1b; }
+
+    #note {
+      font-size: 11px;
+      color: #666;
+      margin-top: 8px;
+      font-style: italic;
+      display: none;
+    }
+
+    #articles {
+      margin-top: 10px;
+      display: none;
+    }
+    #articles h2 {
+      font-size: 12px;
+      color: #444;
+      margin: 0 0 6px 0;
+    }
+    .article {
+      display: block;
+      padding: 7px;
+      margin-bottom: 6px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1e293b;
+    }
+    .article:hover { border-color: #2563eb; }
+    .article .a-title {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .article .a-source {
+      font-size: 10px;
+      color: #888;
+    }
+
+    #status {
+      font-size: 11px;
+      color: #777;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔎 Fake News Detector</h1>
+
+  <textarea id="inputText" placeholder="Paste text, or click 'Use selected text on page'"></textarea>
+
+  <button id="useSelection">Use selected text on page</button>
+  <button id="analyzeBtn">Analyze &amp; Verify</button>
+
+  <div id="result"></div>
+  <div id="note"></div>
+  <div id="articles">
+    <h2>Related articles (compare against these):</h2>
+    <div id="articlesList"></div>
+  </div>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
