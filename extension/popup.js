@@ -1,5 +1,5 @@
 // Change this to your deployed backend URL once hosted (e.g. Render/HF Spaces).
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://fake-news-detector-e3rt.onrender.com";
 
 const inputText = document.getElementById("inputText");
 const useSelectionBtn = document.getElementById("useSelection");
