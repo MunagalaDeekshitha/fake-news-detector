@@ -1,4 +1,5 @@
 # 🔎 Fake News Detector — ML Backend + Chrome Extension
+**Live demo:** https://fake-news-detector-e3rt.onrender.com 
 
 An end-to-end fake news / misinformation detector: a fine-tuned DistilBERT model served
 via a FastAPI backend, combined with a live news-search cross-check, and a Chrome
