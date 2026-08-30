@@ -197,7 +197,19 @@ def _search_related_news(text: str, max_results: int = 5) -> list[NewsResult]:
         print(f"News search failed: {e}")
         return []
 
-
+@app.get("/")
+def root():
+    return {
+        "message": "Fake News Detector API is running.",
+        "github": "https://github.com/MunagalaDeekshitha/fake-news-detector",
+        "endpoints": {
+            "GET /health": "Check server + model status",
+            "POST /predict": "Classify text as real/fake. Body: {\"text\": \"...\"}",
+            "POST /predict_url": "Classify an article by URL. Body: {\"url\": \"...\"}",
+            "POST /verify": "Classify text AND get live related news articles. Body: {\"text\": \"...\"}",
+        },
+        "note": "This is an API service, not a website -- use the endpoints above with a tool like curl or Postman, or use the Chrome extension in the GitHub repo.",
+    }
 @app.get("/health")
 def health():
     return {"status": "ok", "model_loaded": backend is not None, "backend": backend}
